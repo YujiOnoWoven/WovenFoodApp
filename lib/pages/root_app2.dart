@@ -21,6 +21,7 @@
 import 'package:flutter/material.dart';
 import 'package:woven_food_app/thema/colors.dart';
 import 'package:woven_food_app/pages/cook_screen.dart';
+import 'package:woven_food_app/pages/home_screen.dart';
 
 void main() => runApp(const MyApp());
 
@@ -48,19 +49,16 @@ class MyStatefulWidget extends StatefulWidget {
 
 /// This is the private State class that goes with MyStatefulWidget.
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
+  //ページインデックス()
   int _selectedIndex = 0;
   //static const applies only within the class. In this case, It's MSW.
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  //ページインデックス
+  //リストで管理する(配列を宣言)
   static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Dummy 0: Cook',
-      style: optionStyle,
+    CookScreen(
     ),
-    Text(
-      'Dummy 1: Shop',
-      style: optionStyle,
+    HomeScreen(
     ),
     Text(
       'Dummy 2: Home',
@@ -88,9 +86,10 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('WovenFoodApp'),
-        backgroundColor: Color(0xff5bc0de),
+        backgroundColor: const Color(0xff5bc0de),
       ),
       body: Center(
+        //ここでindexと_widgetOption(List)が合流
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
