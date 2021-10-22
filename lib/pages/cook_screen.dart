@@ -3,19 +3,43 @@ import 'package:flutter/material.dart';
 class CookScreen extends StatelessWidget {
   const CookScreen({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: Colors.green[100],
-        // Appbar
-        appBar: AppBar(
-          backgroundColor: Colors.green[100],
-          title: const Text(
-            'Cooking',
-            style: TextStyle(fontSize: 16),
-          ),
+    return MaterialApp(
+      home: Scaffold(
+        body: CustomScrollView(
+          slivers: [
+            SliverToBoxAdapter(
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Text('写真ロードできないじゃんよ Now loading function cant work//' * 2),
+              ),
+            ),
+            SliverList(
+              delegate: SliverChildBuilderDelegate(
+                    (context, index) {
+                  return Column(
+                    children: [
+                      SizedBox(
+                        height: 100.0,
+                        child: Image.network('https://photos.google.com/album/AF1QipPZicJ0ET9pKiwjw5ilnRASfcjUgmmwBk5iWvX-'),
+                      ),
+                      const Divider(),
+                      RichText(
+                      text: const TextSpan(
+                      text: 'Sample recipe\n・tomato\n・meat',
+                      )
+                      ),
+                      const Divider(),
+                    ],
+                  );
+                },
+                childCount: 20,
+              ),
+            ),
+          ],
         ),
-        body: const Center(child: Icon(Icons.fastfood)));
+      ),
+    );
   }
 }
