@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:woven_food_app/pages/post.dart';
 
 class CookScreen extends StatelessWidget {
   const CookScreen({Key? key}) : super(key: key);
@@ -6,13 +7,27 @@ class CookScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      //don't want to show banner バーナーを見せたくない
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
+        appBar: AppBar(
+          actions: [
+            IconButton(
+              icon: Icon(Icons.edit),
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                  return PostPage();
+                }));
+              },
+            ),
+          ],
+        ),
         body: CustomScrollView(
           slivers: [
             SliverToBoxAdapter(
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
-                child: Text('写真ロードできないじゃんよ Now loading function cant work//' * 2),
+                child: Text('Now we create AWS & Firebase function' * 2),
               ),
             ),
             SliverList(
@@ -21,16 +36,18 @@ class CookScreen extends StatelessWidget {
                   return Column(
                     children: [
                       SizedBox(
-                        height: 100.0,
-                        child: Image.network('https://photos.google.com/album/AF1QipPZicJ0ET9pKiwjw5ilnRASfcjUgmmwBk5iWvX-'),
+                        width: 300,
+                        height: 200,
+                        child: Image.network('https://i.imgur.com/i29MiN4.jpeg'),
                       ),
                       const Divider(),
 
                       /* nagai add -> */
+
                       Center(
                         child: SizedBox(
-                          width: 300,
-                          height: 200,
+                          width: 100,
+                          height: 50,
                           child:
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -45,7 +62,7 @@ class CookScreen extends StatelessWidget {
 
                       RichText(
                       text: const TextSpan(
-                      text: 'Sample recipe\n・tomato\n・meat',
+                      text: 'Sample recipe\n•tomato •potato\n•meat •Bans',
                       )
                       ),
                       const Divider(),
