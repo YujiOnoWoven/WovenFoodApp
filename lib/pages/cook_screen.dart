@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:woven_food_app/pages/post.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:woven_food_app/thema/colors.dart';
 
 class CookScreen extends StatelessWidget {
   const CookScreen({Key? key}) : super(key: key);
@@ -10,18 +12,6 @@ class CookScreen extends StatelessWidget {
       //don't want to show banner バーナーを見せたくない
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          actions: [
-            IconButton(
-              icon: Icon(Icons.edit),
-              onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-                  return PostPage();
-                }));
-              },
-            ),
-          ],
-        ),
         body: CustomScrollView(
           slivers: [
             SliverToBoxAdapter(
@@ -30,6 +20,7 @@ class CookScreen extends StatelessWidget {
                 child: Text('Now we create AWS & Firebase function' * 2),
               ),
             ),
+
             SliverList(
               delegate: SliverChildBuilderDelegate(
                     (context, index) {
@@ -59,13 +50,40 @@ class CookScreen extends StatelessWidget {
                         ),
                       ),
                       /* <- nagai add */
+                      const Divider(),
 
                       RichText(
                       text: const TextSpan(
                       text: 'Sample recipe\n•tomato •potato\n•meat •Bans',
+                        style: TextStyle(color: bgDark),
                       )
                       ),
                       const Divider(),
+/*
+                      StreamBuilder<QuerySnapshot>(
+                        stream: FirebaseFirestore.instance.collection("posts").snapshots(),
+                        builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+                          if (snapshot.connectionState == ConnectionState.waiting) {
+                            return Center(child: CircularProgressIndicator());
+                          }
+                          return ListView(
+                            children: snapshot.data!.docs.map((DocumentSnapshot document) {
+
+
+                              return Card(
+                                child: ListTile(
+                                  //教科書：https://rightcode.co.jp/blog/information-technology/flutter-firebase-bulletin-board-app-make
+                                  //title: Text(document.data()['content']),
+                                  //苦労した部分
+                                  title: Text(document['content']),
+                                  subtitle: Text("サブタイトル"),
+                                ),
+                              );
+                            }).toList(),
+                          );
+                        },
+                      ),
+                      */
                     ],
                   );
                 },
@@ -74,6 +92,7 @@ class CookScreen extends StatelessWidget {
             ),
           ],
         ),
+
       ),
     );
   }
