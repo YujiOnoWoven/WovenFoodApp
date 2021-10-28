@@ -28,6 +28,7 @@ class CookScreen extends StatelessWidget {
                           Icon(
                             Icons.account_circle,
                             color: Colors.blue,
+                            size: 32,
                           ),
                           Text('Taro Toyoda')
                         ]),
