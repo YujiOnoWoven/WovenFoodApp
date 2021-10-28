@@ -25,12 +25,12 @@ class CookScreen extends StatelessWidget {
                         //教科書：https://rightcode.co.jp/blog/information-technology/flutter-firebase-bulletin-board-app-make
                         //title: Text(document.data()['content']),
                         //苦労した部分
-                        leading: document['imageURL'] != null
-                            ? Image.network(document['imageURL'])
+                        leading: document['imgURL'] != null
+                            ? Image.network(document['imgURL'])
                             : null,
-                        title: Text(document['content']),
+                        title: Text(document['title']),
                         //trailing: Text(document['imageURL']),
-                        subtitle: Text("サブタイトル"),
+                        subtitle: Text(document['author']),
                       ),
                     );
                   }).toList(),

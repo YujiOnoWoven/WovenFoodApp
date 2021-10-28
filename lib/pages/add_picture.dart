@@ -32,13 +32,13 @@ class AddBookModel extends ChangeNotifier {
       throw '著者が入力されていません';
     }
 
-    final doc = FirebaseFirestore.instance.collection('books').doc();
+    final doc = FirebaseFirestore.instance.collection('posts').doc();
 
     String? imgURL;
     if (imageFile != null) {
       // storageにアップロード
       final task = await FirebaseStorage.instance
-          .ref('books/${doc.id}')
+          .ref('posts/${doc.id}')
           .putFile(imageFile!);
       imgURL = await task.ref.getDownloadURL();
     }

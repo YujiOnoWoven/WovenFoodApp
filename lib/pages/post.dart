@@ -9,7 +9,7 @@ class PostPage extends StatelessWidget {
       create: (_) => AddBookModel(),
       child: Scaffold(
         appBar: AppBar(
-          title: Text('本を追加'),
+          title: Text('レシピを追加(写真→四角をclick)'),
         ),
         body: Center(
           child: Consumer<AddBookModel>(builder: (context, model, child) {
@@ -36,7 +36,7 @@ class PostPage extends StatelessWidget {
                       ),
                       TextField(
                         decoration: InputDecoration(
-                          hintText: '本のタイトル',
+                          hintText: '料理の名前 (例: 鶏肉のトマト煮)',
                         ),
                         onChanged: (text) {
                           model.title = text;
@@ -47,7 +47,7 @@ class PostPage extends StatelessWidget {
                       ),
                       TextField(
                         decoration: InputDecoration(
-                          hintText: '本の著者',
+                          hintText: 'レシピを記入する (例: トマト２個 牛肉 100g)',
                         ),
                         onChanged: (text) {
                           model.author = text;
