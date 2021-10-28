@@ -40,6 +40,9 @@ dependencies:
   keyboard_avoider: ^0.1.2
   firebase_core: ^1.8.0
   cloud_firestore: ^2.5.4
+  image_picker: 0.8.4+3
+  firebase_storage: 10.0.6
+  provider: ^5.0.0
 
 dev_dependencies:
   flutter_test:

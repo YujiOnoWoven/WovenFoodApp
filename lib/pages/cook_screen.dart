@@ -20,14 +20,16 @@ class CookScreen extends StatelessWidget {
                 }
                 return ListView(
                   children: snapshot.data!.docs.map((DocumentSnapshot document) {
-
-
                     return Card(
                       child: ListTile(
                         //教科書：https://rightcode.co.jp/blog/information-technology/flutter-firebase-bulletin-board-app-make
                         //title: Text(document.data()['content']),
                         //苦労した部分
+                        leading: document['imageURL'] != null
+                            ? Image.network(document['imageURL'])
+                            : null,
                         title: Text(document['content']),
+                        //trailing: Text(document['imageURL']),
                         subtitle: Text("サブタイトル"),
                       ),
                     );
