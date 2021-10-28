@@ -5,7 +5,7 @@ const Color secondary = Color(0xffffffff);
 
 const Color textWhite = Color(0xffffffff);
 const Color textBlack = Color(0xff000000);
-const Color textGrey = Color(0xffC8C8C8);
+const Color textBrown = Color(0xff4c4c4c);
 
 const Color bgWhite = Color(0xffffffff);
 const Color bgDark = Color(0xff000000);
