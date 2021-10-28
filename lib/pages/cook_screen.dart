@@ -20,6 +20,20 @@ class CookScreen extends StatelessWidget {
                 }
                 return ListView(
                   children: snapshot.data!.docs.map((DocumentSnapshot document) {
+
+                    return Column(
+                        children: [
+                        SizedBox(
+                        width: 300,
+                        height: 200,
+                        child: document['imgURL'] != null
+                            ? Image.network(document['imgURL'])
+                            : null,
+                    ),
+
+                    ],
+                    );
+                    /*
                     return Card(
                       child: ListTile(
                         //教科書：https://rightcode.co.jp/blog/information-technology/flutter-firebase-bulletin-board-app-make
@@ -33,6 +47,8 @@ class CookScreen extends StatelessWidget {
                         subtitle: Text(document['author']),
                       ),
                     );
+                    */
+
                   }).toList(),
                 );
               },
