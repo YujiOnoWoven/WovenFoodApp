@@ -22,18 +22,17 @@ import 'package:flutter/material.dart';
 import 'package:woven_food_app/thema/colors.dart';
 import 'package:woven_food_app/pages/cook_screen.dart';
 import 'package:woven_food_app/pages/home_screen.dart';
+import 'package:woven_food_app/pages/post.dart';
 
 void main() => runApp(const MyApp());
 
 /// This is the main application widget.
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-  static const String _title = 'Flutter Code Sample';
 
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      title: _title,
       home: MyStatefulWidget(),
     );
   }
@@ -80,13 +79,22 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
     });
   }
 
-//下記でappBar,body,bottomNavigationBarを分け、bodyは_wid...で
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('WovenFoodApp'),
         backgroundColor: const Color(0xff5bc0de),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.edit),
+            onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                return PostPage();
+              }));
+            },
+          ),
+        ],
       ),
       body: Center(
         //ここでindexと_widgetOption(List)が合流

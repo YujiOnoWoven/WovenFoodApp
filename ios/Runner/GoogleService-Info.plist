@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>43260444501-gdiegj8jqp70mm62fp5smbjc89ag9omg.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.43260444501-gdiegj8jqp70mm62fp5smbjc89ag9omg</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDc2YCLwI-bDPaNkXLBPsSjc0tfHL68Avo</string>
+	<key>GCM_SENDER_ID</key>
+	<string>43260444501</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.wovenFoodApp</string>
+	<key>PROJECT_ID</key>
+	<string>wovenfoodapp</string>
+	<key>STORAGE_BUCKET</key>
+	<string>wovenfoodapp.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:43260444501:ios:8058fe736bf247f761b9dc</string>
+</dict>
+</plist>
