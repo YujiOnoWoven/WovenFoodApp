@@ -77,21 +77,6 @@ class CookScreen extends StatelessWidget {
                     )
                   ],
                 );
-                /*
-                    return Card(
-                      child: ListTile(
-                        //教科書：https://rightcode.co.jp/blog/information-technology/flutter-firebase-bulletin-board-app-make
-                        //title: Text(document.data()['content']),
-                        //苦労した部分
-                        leading: document['imgURL'] != null
-                            ? Image.network(document['imgURL'])
-                            : null,
-                        title: Text(document['title']),
-                        //trailing: Text(document['imageURL']),
-                        subtitle: Text(document['author']),
-                      ),
-                    );
-                    */
               }).toList(),
             );
           },

@@ -79,7 +79,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
     });
   }
 
-//下記でappBar,body,bottomNavigationBarを分け、bodyは_wid...で
   @override
   Widget build(BuildContext context) {
     return Scaffold(
