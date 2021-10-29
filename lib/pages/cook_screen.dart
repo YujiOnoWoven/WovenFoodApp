@@ -53,7 +53,6 @@ class CookScreen extends StatelessWidget {
                               ],
                             ),
                           ),
-
                       ],
                     ),
                     Column(
